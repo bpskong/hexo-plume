@@ -1,0 +1,15 @@
+<%
+var posts;
+if (config.category == 2) {
+  posts = page.posts;
+} else {
+  posts = page;
+}
+%>
+<h2><%= page.category %></h2>
+<div id="main">
+<% posts.each(function(item){ %>
+  <%- partial('_partial/item', {item: item}) %>
+<% }); %>
+</div>
+<%- partial('_partial/pagination') %>

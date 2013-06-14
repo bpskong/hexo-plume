@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <%- partial('_partial/head') %>
+</head>
+<body>
+  <header>
+    <%- partial('_partial/header') %>
+  </header>
+  <form id="search-form" target="_blank" action="//google.hk/search" method="get" accept-charset="utf-8">
+    <input id="search-input" type="search" name="q" placeholder="<%= __('search') %>" />
+    <input type="hidden" name="q" value="site:<%- config.url.replace(/^https?:\/\//, '') %>">
+  </form>
+  <div id="container">
+    <%- body %>
+  </div>
+  <footer>
+    <%- partial('_partial/footer') %>
+  </footer>
+</body>
+</html> 

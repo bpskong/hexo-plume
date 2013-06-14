@@ -1,0 +1,75 @@
+<%
+var title = '';
+if (page.archive) {
+  if (page.year)
+    title = page.year + (page.month ? '/' + page.month : '');
+  else
+    title = __('archive_a');
+}
+var posts;
+if (config.archive == 2) {
+  posts = page.posts;
+} else {
+  posts = page;
+}
+%>
+<h2><%= title %></h2>
+<div id="main">
+<div id="archives">
+  <a id="toggler" href="#"><%= __('unfold_all') %></a>
+  <ul>
+  <%
+    function fixdate(n) {
+      if (n < 10)
+        return "0" + "" + n;
+      else
+        return n;
+    }
+    var y = 0, m = 0, c = 0;
+    posts.each(function(item) {
+      if (y != item.date.year() || m != (item.date.month() + 1)) {
+        if (c) {%></ul></li><%}
+        %><li><a href="#" class="yearmonth" title="<%- item.date.format("YYYY-MM") %>">+ <%- item.date.format("YYYY-MM") %></a><ul class="monthlisting"><%
+        y = item.date.year();
+        m = item.date.month() + 1;
+        c = 0;
+      }
+      c = c + 1;
+      %><li><%- fixdate(item.date.date()) %>日：<a href="<%- config.root %><%- item.path %>"><%- item.title %></li></a><% 
+    });
+    %></ul></li><%
+  %>
+  </ul>
+</div>
+</div>
+<%- partial('_partial/pagination') %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#archives").find(".yearmonth").click(function() {
+      $(this).next("ul").slideToggle("fast");
+      if ( ("+ " + $(this).attr("title")) == $(this).text() ) {
+        $(this).text("- " + $(this).attr("title"));
+      } else {
+        $(this).text("+ " + $(this).attr("title"));
+      }
+    });
+    $("#archives").find("#toggler").click(function() {
+      if ( "<%= __('unfold_all') %>" == $(this).text() ) {
+        $(this).parent("#archives").find(".monthlisting").show();
+        $(this).parent("#archives").find(".yearmonth").each(function(index, item) {
+          $(item).text("- " + $(item).attr("title"));
+        });
+        $(this).text("<%= __('fold_all') %>");
+      } else {
+        $(this).parent("#archives").find(".monthlisting").hide();
+        $(this).parent("#archives").find(".yearmonth").each(function(index, item) {
+          $(item).text("+ " + $(item).attr("title"));
+        });
+        $(this).text("<%= __('unfold_all') %>");
+      }
+      return false;
+    });
+    $("#archives").find(".monthlisting").hide();
+    $("#archives").find(".yearmonth:first").trigger("click");
+  });
+</script>

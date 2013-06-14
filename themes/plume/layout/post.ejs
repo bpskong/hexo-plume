@@ -1,0 +1,32 @@
+<div id="main">
+  <div id="post">
+    <div id="post-title">
+      <h1><a href="<%- config.root %><%- page.path %>"><%= page.title %></a></h1>
+      <p>by <a href="<% if (theme.weibo) { %><%= theme.weibo %><% } else { %><%= config.url %><% } %>" target="_blank"><%= config.author %></a> on <time datetime="<%= page.date.toDate().toISOString() %>"><%= page.date.format(config.date_format) %></time></p>
+    </div>
+    <article>     
+      <%- page.content %>
+    </article>
+    <%- partial('_partial/syntax') %>
+    <div id="post-footer">
+    <%
+    if (page.categories && page.categories.length) {
+      var cats = [];
+      page.categories.forEach(function(item) {
+        cats.push('<a href="' + config.root + item.path + '">' + item.name + '</a>');
+      });
+      %><div><%- __('categories') %>：<%- cats.join(', ') %></div><%
+    }
+    if (page.tags && page.tags.length) {
+      var tags = [];
+      page.tags.forEach(function(item) {
+        tags.push('<a href="' + config.root + item.path + '">' + item.name + '</a>');
+      });
+      %><div><%- __('tags') %>：<%- tags.join(', ') %></div><%
+    }
+    %>
+    <%- partial('_partial/share') %>
+    </div>
+  </div>
+  <%- partial('_partial/comment') %>
+</div>

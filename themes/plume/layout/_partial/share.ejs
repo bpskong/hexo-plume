@@ -1,0 +1,21 @@
+<% if (theme.jiathis){ %>
+  <div id="post-share">
+
+<!-- JiaThis Button BEGIN -->
+  <div class="jiathis_style">
+    <span style="float:left"><%= __("share") %>：</span>
+    <a class="jiathis_button_tsina"></a>
+    <a class="jiathis_button_evernote"></a>
+    <a class="jiathis_button_weixin"></a>
+    <a class="jiathis_button_googleplus"></a>
+    <a href="http://www.jiathis.com/share?uid=<%= theme.jiathis.uid %>" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+  </div>
+  <script type="text/javascript">
+    var jiathis_config = { data_track_clickback:true, ralateuid:{"tsina":"<%= theme.jiathis.tsina %>"}, }
+  </script>
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=<%= theme.jiathis.uid %>" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+  </div>
+
+<% } %>

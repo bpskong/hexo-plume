@@ -1,0 +1,7 @@
+.deploy
+node_modules
+npm-debug.log
+db.json
+public
+source/_posts
+source/img
