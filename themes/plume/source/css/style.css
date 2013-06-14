@@ -113,7 +113,8 @@ header nav li {
 #main #post a {
  color: #123456;
 }
-#main #post article a {
+#main #post article a,
+#main #post article a code {
  color: #CC6600;
 }
 #main #post #post-title {
@@ -163,16 +164,7 @@ article hr {
  border-top:1px solid #ddd;
  margin: 0.5em 0em;
 }
-article pre {
- overflow:auto;
- font-family:Courier New;
- background:#eee;
- margin:0.5em 1em;
- padding:10px;
-}
-article pre code {
- font-family:Courier New;
-}
+
 article p code,
 article ul li code {
  color: #666;
@@ -181,6 +173,7 @@ article ul li code {
  padding: 0 5px;
  border: 1px solid #ddd;
 }
+
 article blockquote{
  margin:0.5em 1em;
  border-top: 1px solid #ddd;
@@ -188,6 +181,103 @@ article blockquote{
  font-style: italic;
  padding: 0 30px 15px;
  text-align: center;
+}
+
+figure.highlight {
+ overflow: auto;
+ margin:0.5em 1em;
+ padding:15px;
+ background: #eee;
+ border: 1px solid #ddd;
+}
+figure.highlight pre {
+ border: none;
+ padding: 0;
+ margin: 0;
+}
+figure.highlight table {
+ margin-top: 0;
+ border-spacing: 0;
+}
+figure.highlight .gutter {
+ color: #555;
+ padding-right: 15px;
+ border-right: 1px solid #ddd;
+ text-align: right;
+}
+figure.highlight .code {
+ padding-left: 15px;
+ border-left: 1px solid #fff;
+ color: #555;
+}
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .doctype,
+pre .pi,
+pre .lisp .string,
+pre .javadoc {
+ color: #93a1a1;
+ font-style: italic;
+}
+pre .keyword,
+pre .winutils,
+pre .method,
+pre .addition,
+pre .css .tag,
+pre .request,
+pre .status,
+pre .nginx .title {
+ color: #859900;
+}
+pre .number,
+pre .command,
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula,
+pre .regexp,
+pre .hexcolor {
+ color: #2aa198;
+}
+pre .title,
+pre .localvars,
+pre .chunk,
+pre .decorator,
+pre .built_in,
+pre .identifier,
+pre .vhdl,
+pre .literal,
+pre .id {
+ color: #268bd2;
+}
+pre .attribute,
+pre .variable,
+pre .lisp .body,
+pre .smalltalk .number,
+pre .constant,
+pre .class .title,
+pre .parent,
+pre .haskell .type {
+ color: #b58900;
+}
+pre .preprocessor,
+pre .preprocessor .keyword,
+pre .shebang,
+pre .symbol,
+pre .symbol .string,
+pre .diff .change,
+pre .special,
+pre .attr_selector,
+pre .important,
+pre .subst,
+pre .cdata,
+pre .clojure .title {
+ color: #555;
+ font-style: italic;
+}
+pre .deletion {
+ color: #dc322f;
 }
 
 #post-footer {
@@ -253,16 +343,16 @@ article blockquote{
 div.table {
  margin: 0.5em 1em;
 }
-table {
+div.table table {
  width: 100%;
  border-collapse: collapse;
 }
-th { 
+div.table th { 
  border:1px solid #ddd;
  padding: 0.5em;
  background: #eee; 
 } 
-td {
+div.table td {
  padding: 0.5em;
  border:1px solid #ddd;
 } 
