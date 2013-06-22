@@ -7,10 +7,17 @@
   <header>
     <%- partial('_partial/header') %>
   </header>
-  <form id="search-form" target="_blank" action="//google.hk/search" method="get" accept-charset="utf-8">
-    <input id="search-input" type="search" name="q" placeholder="<%= __('search') %>" />
-    <input type="hidden" name="q" value="site:<%- config.url.replace(/^https?:\/\//, '') %>">
-  </form>
+  <nav>
+    <ul>
+      <% for (var i in theme.menu){ %>
+        <li><a href="<%- config.root %><%- theme.menu[i] %>"><%= i %></a></li>
+      <% } %>
+    </ul>
+    <form id="search-form" target="_blank" action="//google.hk/search" method="get" accept-charset="utf-8">
+      <input id="search-input" type="search" name="q" placeholder="<%= __('search') %>" />
+      <input type="hidden" name="q" value="site:<%- config.url.replace(/^https?:\/\//, '') %>">
+    </form>
+  </nav>
   <div id="container">
     <%- body %>
   </div>

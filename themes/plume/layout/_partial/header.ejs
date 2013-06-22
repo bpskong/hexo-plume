@@ -1,24 +1,13 @@
 <div>
-  <div>
-    <h1 id="title"><a href="<%- config.root %>"><%= config.title %></a></h1>
-    <div id="icons">
-      <a href="#" onclick="$('#search-form').slideToggle('fast');"><i class="icon-search"></i></a>
-      <% if (theme.weibo) { %>
-        <a href="<%- theme.weibo %>" target="_blank"><i class="icon-sina-weibo"></i></a>
-      <% } %>
-      <% if (theme.github) { %>
-        <a href="<%- theme.github %>" target="_blank"><i class="icon-github"></i></a>
-      <% } %>
-      <a href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" target="_blank"><i class="icon-rss"></i></a>
-    </div>
-  </div>
-  <div>
-    <nav>
-      <ul>
-        <% for (var i in theme.menu){ %>
-          <li><a href="<%- config.root %><%- theme.menu[i] %>"><%= i %></a></li>
-        <% } %>
-      </ul>
-    </nav>
+  <h1 id="title"><a href="<%- config.root %>"><%= config.title %></a></h1>
+  <div id="icons">
+    <a href="#" onclick="$('#search-form').slideToggle('fast');$('#search-input').val('');$('#search-input').focus();"><i class="icon-search"></i></a>
+    <% if (theme.weibo) { %>
+      <a href="<%- theme.weibo %>" target="_blank"><i class="icon-sina-weibo"></i></a>
+    <% } %>
+    <% if (theme.github) { %>
+      <a href="<%- theme.github %>" target="_blank"><i class="icon-github"></i></a>
+    <% } %>
+    <a href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" target="_blank"><i class="icon-rss"></i></a>
   </div>
 </div>

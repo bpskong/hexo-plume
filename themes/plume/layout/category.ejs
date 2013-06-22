@@ -6,7 +6,7 @@ if (config.category == 2) {
   posts = page;
 }
 %>
-<h2><%= page.category %></h2>
+<h2>『<%= page.category %>』</h2>
 <div id="main">
 <% posts.each(function(item){ %>
   <%- partial('_partial/item', {item: item}) %>
