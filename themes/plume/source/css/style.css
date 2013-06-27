@@ -372,6 +372,7 @@ pre .deletion {
 }
 
 div.table {
+ overflow: auto;
  margin: 0.5em 0;
 }
 div.table table {
