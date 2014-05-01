@@ -81,5 +81,4 @@ plugins:
 ## Docs: http://zespia.tw/hexo/docs/deploy.html
 deploy:
   type: github
-  repository: git@github.com:bpskong/bpskong.github.com.git
-  branch: master
+  repo: git@github.com:bpskong/bpskong.github.com.git

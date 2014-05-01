@@ -371,20 +371,18 @@ pre .deletion {
  float: left;
 }
 
-div.table {
+article>table {
  overflow: auto;
  margin: 0.5em 0;
-}
-div.table table {
  width: 100%;
  border-collapse: collapse;
 }
-div.table th { 
+article>table th { 
  border:1px solid #ddd;
  padding: 0.5em;
  background: #eee; 
 } 
-div.table td {
+article>table td {
  padding: 0.5em;
  border:1px solid #ddd;
 } 
