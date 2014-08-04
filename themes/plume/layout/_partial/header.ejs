@@ -1,13 +1,16 @@
 <div>
   <h1 id="title"><a href="<%- config.root %>"><%= config.title %></a></h1>
   <div id="icons">
-    <a href="#" onclick="$('#search-form').slideToggle('fast');$('#search-input').val('');$('#search-input').focus();"><i class="icon-search"></i></a>
+    <a href="#" title="search" onclick="$('#search-form').slideToggle('fast');$('#search-input').val('');$('#search-input').focus();"><i class="icon-search"></i></a>
     <% if (theme.weibo) { %>
-      <a href="<%- theme.weibo %>" target="_blank"><i class="icon-sina-weibo"></i></a>
+      <a href="<%- theme.weibo %>" title="weibo" target="_blank"><i class="icon-sina-weibo"></i></a>
     <% } %>
     <% if (theme.github) { %>
-      <a href="<%- theme.github %>" target="_blank"><i class="icon-github"></i></a>
+      <a href="<%- theme.github %>" title="github" target="_blank"><i class="icon-github"></i></a>
     <% } %>
-    <a href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" target="_blank"><i class="icon-rss"></i></a>
+    <% if (theme.photos) { %>
+      <a href="<%- theme.photos %>" title="photos" target="_blank"><i class="icon-camera"></i></a>
+    <% } %>
+    <a href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="rss" target="_blank"><i class="icon-rss"></i></a>
   </div>
 </div>

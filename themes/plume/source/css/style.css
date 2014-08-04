@@ -389,11 +389,11 @@ article>table td {
 
 @font-face {
   font-family: 'fontello';
-  src: url('../font/fontello.eot?31434753');
-  src: url('../font/fontello.eot?31434753#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff?31434753') format('woff'),
-       url('../font/fontello.ttf?31434753') format('truetype'),
-       url('../font/fontello.svg?31434753#fontello') format('svg');
+  src: url('../font/fontello.eot?25277317');
+  src: url('../font/fontello.eot?25277317#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff?25277317') format('woff'),
+       url('../font/fontello.ttf?25277317') format('truetype'),
+       url('../font/fontello.svg?25277317#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -403,7 +403,7 @@ article>table td {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?31434753#fontello') format('svg');
+    src: url('../font/fontello.svg?25277317#fontello') format('svg');
   }
 }
 */
@@ -440,9 +440,10 @@ article>table td {
 }
  
 .icon-rss:before { content: '\e801'; } /* '' */
-.icon-github:before { content: '\e802'; } /* '' */
-.icon-sina-weibo:before { content: '\e800'; } /* '' */
-.icon-search:before { content: '\e803'; } /* '' */
+.icon-sina-weibo:before { content: '\e802'; } /* '' */
+.icon-github:before { content: '\e803'; } /* '' */
+.icon-search:before { content: '\e804'; } /* '' */
+.icon-camera:before { content: '\e805'; } /* '' */
 
 /* phone(320px) */
 @media only screen and (min-width: 320px),(max-width: 320px) {
@@ -453,6 +454,9 @@ article>table td {
   width: 100%;
  }
  body>nav {
+  width: 100%;
+ }
+ body>footer {
   width: 100%;
  }
  body>footer {
